@@ -1,0 +1,58 @@
+{% load static %} <!-- Load static files to use in the template -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Meta tags and links for responsive design, font styling, and external CSS, etc. -->
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'images/site.webmanifest' %}">
+        <link rel="mask-icon" href="{% static 'images/safari-pinned-tab.svg' %}" color="#5bbad5">
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+        <meta name="msapplication-TileColor" content="#00aba9">
+        <meta name="msapplication-config" content="{% static 'images/browserconfig.xml' %}">
+        <meta name="theme-color" content="#ffffff">
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+        <title>Logged out</title>
+
+    </head>
+
+    <body>
+        <!-- Container with logout message and re-login option -->
+        <div class="flex-container">
+            <div class="center-div">
+                <h1 class="main-header-login">Thanks for visiting!</h1>
+                <div class="login-container logout-specific">
+                    <div class="top-notch"></div>
+                    <div>
+                        <img src="{% static 'images/recipe-three.jpg' %}" alt="recipe-image" class="login-image" />
+                    </div>
+                    <div class="logout-side-message">
+                        <div class="logout-top-message">
+                            <h2 class="logout-message">You have been successfully logged out</h2>
+                            <p class="logout-submessage">We will see you next time!</p>
+                        </div>
+                        <div>
+                            <p class="re-log-message">Logged out by mistake? Log back in to continue</p>
+                            <div class="button-holder">
+                                <a href="{%url 'login' %}" class="login-button-onlogout">Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

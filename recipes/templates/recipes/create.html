@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RecipeApp | Create</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link
+      rel="shortcut icon"
+      href="{% static 'recipes/images/recipe-book.png' %}"
+    />
+    <link rel="stylesheet" href="{% static 'recipes/css/styles.css' %}" />
+    <style type="text/css">
+      body {
+        font-family: "Lato", sans-serif;
+        background-color: #eaece5;
+        margin: 0;
+        padding: 0;
+      }
+
+      .form-field label {
+        display: inline-block;
+        width: 150px; /* Adjust as needed for proper alignment */
+        text-align: right;
+        margin-right: 10px;
+      }
+
+      .form-field input,
+      .form-field select {
+        width: 200px; /* Adjust as needed for proper alignment */
+      }
+
+      .form-field select {
+        width: 208px;
+        height: 25px;
+        appearance: none; /* Remove default styling in modern browsers */
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="{% url 'recipes:list' %}">All Recipes</a></li>
+      <li><a href="{% url 'recipes:search' %}">Search</a></li>
+      <li><a class="active" href="{% url 'recipes:create' %}">Create</a></li>
+      <li><a href="{% url 'recipes:about' %}">About</a></li>
+      <li style="float: right"><a href="{% url 'logout' %}">Logout</a></li>
+    </ul>
+
+    <h1>Create a Recipe</h1>
+    <h2>All fields are required.</h2>
+
+    {% if messages %} {% for message in messages %}
+    <script>
+      alert("{{ message }}");
+    </script>
+    {% endfor %} {% endif %}
+
+    <form
+      action=""
+      method="POST"
+      class="form_data"
+      enctype="multipart/form-data"
+    >
+      {% csrf_token %}
+      <div class="form-field">
+        <label for="id_name">Name:</label>
+        {{ create_form.name }}
+      </div>
+      <div class="form-field">
+        <label for="id_cooking_time">Cooking time (min):</label>
+        {{ create_form.cooking_time }}
+      </div>
+      <div class="form-field">
+        <label for="id_difficulty">Difficulty:</label>
+        {{ create_form.difficulty }}
+      </div>
+      <div class="form-field">
+        <label for="id_ingredients">Ingredients:</label>
+        {{ create_form.ingredients }}
+      </div>
+      <div class="form-field">
+        <label for="id_pic">Picture:</label>
+        {{ create_form.pic }}
+      </div>
+      <button type="submit" class="create-btn">Create</button>
+    </form>
+  </body>
+</html>

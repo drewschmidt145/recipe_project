@@ -1,70 +1,65 @@
-# Recipe App
+# Recipes Web App
 
-## Overview
+## Introduction
 
-The Recipe App is a fully functional web application designed to allow users to create, read, and modify recipes, as well as search for recipes based on ingredients and other parameters. Built with Python and Django, this app demonstrates the capabilities of modern web application development, including user authentication, dynamic content creation, and data visualization. The project aims to showcase the developer's understanding of the Django web framework and their ability to develop a comprehensive web application.
+Recipes App is a sophisticated web application developed using Python and Django, aimed at providing users with a seamless experience in managing and exploring various recipes. With a user-friendly interface and robust backend architecture, this project showcases the capabilities of modern web development technologies.
 
-## Technical Requirements
+## Project Overview
 
-- Python 3.6+ and Django 3 compatibility.
-- Exception handling with user-friendly error messages.
-- PostgreSQL for production and SQLite for development database connectivity.
-- Easy-to-use interface with simple forms and clear instructions.
-- Code documentation and automated tests hosted on GitHub.
-- Includes a "requirements.txt" for easy project setup.
+The project encompasses a range of features tailored to meet the diverse needs of users interested in cooking and exploring new recipes. From user authentication to recipe management and data visualization, Recipes App offers a comprehensive solution for recipe enthusiasts.
 
-## Key Features
+## Application Features
 
-- User authentication, login, and logout.
-- Recipe search by ingredients.
-- Automatic difficulty rating for each recipe.
-- Error handling on user input.
-- Detailed recipe information on demand.
-- User recipe submissions with SQLite database integration.
-- Django Admin dashboard for database management.
-- Statistical analysis and visualization of recipe trends.
+- **User Authentication**: Secure login and logout functionality for user accounts.
+- **Recipe Management**: Create, edit, and delete recipes with ease, including detailed information such as ingredients, cooking time, and difficulty level.
+- **Search Functionality**: Effortlessly search for recipes based on names, ingredients or/and difficulty levels.
+- **Dynamic Content**: Display detailed recipe information upon user request, enhancing user engagement.
+- **Data Visualization**: Visualize recipe trends and statistics for better insights and decision-making.
+- **Error Handling**: Ensure smooth user experience through comprehensive error handling and validation mechanisms.
+- **Database Integration**: Seamlessly integrate with SQLite database for efficient data storage and retrieval.
+- **Admin Dashboard**: Utilize Django Admin dashboard for easy management of recipe data.
 
 ## User Goals
 
-- To create and modify recipes with ease, including details such as ingredients, cooking time, and an automated difficulty level.
-- To search for recipes by ingredient.
-- To engage with a community of users through recipe sharing and feedback.
+- **Recipe Exploration**: Discover new recipes and cooking ideas tailored to personal preferences.
+- **Recipe Management**: Organize and manage personal recipe collections efficiently.
 
-## Setup and Installation
+## Installation Guide
 
-1. **Clone the repository:**
-
-```bash
-git clone [repository URL]
-cd recipe-app
+**1. Clone the Repository:**
+  ```bash
+  git clone git@github.com:KunKang82/Recipe-App-Final.git
 ```
-
-2. **Install dependencies:**
-
-```bash
-pip install -r requirements.txt
+**2. Install Dependencies:**
+  ```bash
+  pip install -r requirements.txt
 ```
-
-3. **Setup Database:**
-
-- Adjust the `DATABASES` configuration in `settings.py` for PostgreSQL and SQLite as per your development and production environments.
-
-4. **Run Migrations:**
-
-```bash
-python manage.py migrate
+**3. Database Setup:**
+  ```bash
+  Configure the database settings in 'settings.py' for SQLite
+  Run migrations:
+    python manage.py migrate
 ```
-
-5. **Create Superuser for Admin Access:**
-
-```bash
-python manage.py createsuperuser
+**4. Create Superuser:**
+  ```bash
+  python manage.py createsuperuser
 ```
-
-6. **Run the Development Server:**
-
-```bash
-python manage.py runserver
+**5. Access the Application:**
+  ```bash
+  Open your browser and navigate to 'http://127.0.0.1:8000' to explore Recipes App.
 ```
+## Tech Stack
+- Python
+- Django
+- HTML/CSS
+- SQLite
+- Heroku
 
-- Visit `http://127.0.0.1:8000` in your browser to view the app.
+## Contact Information
+For inquries or feedback, feel free to reach out:
+- [Email Me](mailto:kunkang82@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/kun-woo-kang-6bb0a3284)
+
+## Links
+- [Recipe App](https://desolate-everglades-36144-e369b6e7c0c9.herokuapp.com/)
+- [Video Demo](https://youtu.be/03LmTBfi_jU)

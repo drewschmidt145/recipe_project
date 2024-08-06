@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>RecipeApp | Login</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'recipes/images/recipe-book.png' %}">
+    <link rel='stylesheet' type='text/css' href="{% static 'recipes/css/styles.css' %}">
+    <style type="text/css">
+        body {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.235), rgba(0, 0, 0, 0.235)),
+                url("{% static 'recipes/images/recipes.jpg' %}") no-repeat fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10vh;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth_modal">
+        <div>
+            <h1>Recipe App</h1>
+        </div>
+        <div class='login-container'>
+            <h2>Log in to your account to see our list of recipes</h2>
+            {% comment %} check for error message {% endcomment %}
+            {% if error_message %}
+            <div id="error_login">
+                {{error_message}}
+            </div>
+            {% endif %}
+            {% comment %} print form {% endcomment %}
+            <form action="" method="POST"> 
+                {% comment %} add Django security token {% endcomment %}
+                {% csrf_token %} 
+
+                {% comment %} print form received from view {% endcomment %}
+                <div class="form-field center-button">
+                    {{form}}
+                    <button type="submit" class="login_btn">Login</button>
+                    <br>
+                    <br>
+                    <br>
+                    <a class="back-home_btn" href="{%url 'recipes:home'%}"> Back to home screen </a>
+                </div> 
+            </form>
+        </div>
+    </div>
+</body>
+</html>

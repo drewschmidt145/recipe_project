@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RecipeApp | Search</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% load static %}
+    <link
+      rel="shortcut icon"
+      href="{% static 'recipes/images/recipe-book.png' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'recipes/css/styles.css' %}"
+    />
+    <style type="text/css">
+      body {
+        font-family: "Lato", sans-serif;
+        background-color: #eaece5;
+        margin: 0;
+        padding: 0;
+      }
+
+      .chart {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="{% url 'recipes:list' %}">All Recipes</a></li>
+      <li><a class="active" href="{% url 'recipes:search' %}">Search</a></li>
+      <li><a href="{% url 'recipes:create' %}">Create</a></li>
+      <li><a href="{% url 'recipes:about' %}">About</a></li>
+      <li style="float: right"><a href="{% url 'logout' %}">Logout</a></li>
+    </ul>
+    <h1>Search for recipes</h1>
+    <br />
+    <br />
+    <form action="" method="POST" class="form_data" id="search-form">
+      {% csrf_token %} {{form}}
+      <button type="submit" class="search-btn">Search</button>
+      <a href="{% url 'recipes:search' %}" class="reset-btn">Reset Search</a>
+    </form>
+    <br />
+    <br />
+    <div class="chart">
+      {% if recipes_df%} {{recipes_df|safe}}
+      <br />
+      <br />
+      <img src="data:image/png;base64, {{chart|safe}}" />
+      {% else %}
+      <h3>No Data</h3>
+      {% endif %}
+    </div>
+  </body>
+</html>

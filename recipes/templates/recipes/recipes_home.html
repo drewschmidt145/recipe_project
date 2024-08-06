@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RecipeApp | Home</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% load static %}
+    <link
+      rel="shortcut icon"
+      href="{% static 'recipes/images/recipe-book.png' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'recipes/css/styles.css' %}"
+    />
+    <script src="{% static 'sales/home.js' %}" defer></script>
+    <style type="text/css">
+      body {
+        background: linear-gradient(rgba(0, 0, 0, 0.235), rgba(0, 0, 0, 0.235)),
+          url("{% static 'recipes/images/recipes.jpg' %}") no-repeat fixed;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10vh;
+        padding: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Recipe App</h1>
+    </div>
+    <div class="login-container">
+      <h2>Log in to your account to see our list of recipes</h2>
+      <div class="center-button">
+        <a href="{%url 'login' %}" class="login_btn"> Login </a>
+      </div>
+    </div>
+  </body>
+</html>
